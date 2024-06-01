@@ -37,7 +37,6 @@ class Solution:
                         have -= 1
                 l += 1
 
-            r += 1
 
         if output:
             return s[output[0]: output[1] + 1]
