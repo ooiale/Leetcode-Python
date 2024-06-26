@@ -1,0 +1,21 @@
+'''
+  confusing problem but basically we need to be able to evenly split all characters
+  to all elements in the arr
+  time is O(n) where n are the number of chars
+'''
+
+from collections import defaultdict
+from typing import List
+
+
+class Solution:
+    def makeEqual(self, words: List[str]) -> bool:
+        count = defaultdict(int)
+        for w in words:
+            for c in w:
+                count[c] += 1
+        total = len(words)
+        for key in count:
+            if count[key] % total != 0:
+                return False
+        return True
